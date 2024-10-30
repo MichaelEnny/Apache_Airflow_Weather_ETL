@@ -1,0 +1,19 @@
+Step 1 : Requirment gathering: this stage rewuires inout from domain experts/product owners, and business analysts to know or identify teh right kind of data needed to meet the 
+organization data project goals. Data could be residing in the internal database of the organization or some APIs, or some sensor (IoT device), some cloud or 3rd party API/IoT
+once discussion is finalized, it comes to the data engineering team to develop an ETL pipeline for it. this pipeline need to be run daily/weekly/monthly based on the 
+data requirments.
+
+step 2: ETL pipeline development: the data engineering team need to develop the ETL pipeline to get the data from the source and load it into the data warehouse
+based on the data requirements. The ETL pipeline can be developed using various tools like Apache Nifi, Apache Spark, Apache Airflow, etc. The pipeline needs to be
+. The data engineer need to combine/integrte all sources of data into a single data warehouse. We can combine all the data through a transformation step into a json file 
+and then load it again into an RDBMS or NoSQL database like mongoDB or MySql or s3 bucket. The data keeps getting updated with time.
+
+Step 3: This is where workflows comes in , since we need to run the ETL pipeline daily/weekly/monthly based on the data requirements, we need to create a workflow using Airflow.
+this is important for creating the ETL pipeline.
+
+Step 4. Astro: Astro help manage the Airflow workflows. Astro is a platform that helps manage the Airflow workflows. It is a cloud-based platform that helps manage the Airflow workflows
+https://www.astronomer.io/. 
+
+While using Airflow to create workflows, we need to create DAGs (Directed Acyclic Graphs) which are the workflows. DAGs are the workflows that are created using Airflow.
+here, tasks are created. task 1: pull data from API, task 2: transformation, task 3: load data into postgresql. Directed Acyclic, because the can only go in one direction, no cycles.
+each task are also called nodes.
